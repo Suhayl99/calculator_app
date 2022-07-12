@@ -402,16 +402,17 @@ class _MyHomePageState extends State<MyHomePage> {
             editController.text = resultat(resultController.text);
           }catch(e){
             editController.text = "EROR";
+            resultController.text='0';
           }
-          resultController.text="";
+          resultController.text=editController.text;
       }else{
         if(resultController.text == '0'){
           resultController.text= text;
         }else{
           resultController.text += text;
           var a=int.parse(text);
+           editController.text="";
             if(0<=a && a<=9){
-              editController.text="";
               if(resultController.text.contains('+') || resultController.text.contains('-') || resultController.text.contains('÷') || resultController.text.contains('x')) {
                 editController.text+=resultat(resultController.text);
               }else{
